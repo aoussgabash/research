@@ -24,14 +24,14 @@ section{padding:48px 0}.title{text-align:center;margin-bottom:30px}.title h2{fon
 
 /* Academic progression across four research levels. */
 #programs .course{opacity:1;border-color:var(--program-border);background:radial-gradient(circle at 90% 8%,var(--program-glow),transparent 65%),linear-gradient(160deg,var(--program-top),#0b1a2b)}
-#programs .course:nth-child(1){--program-accent:#38bdf8;--program-border:#327da0;--program-glow:rgba(56,189,248,.13);--program-top:#102d43}
-#programs .course:nth-child(3){--program-accent:#d5d2a4;--program-border:#858565;--program-glow:rgba(213,210,164,.12);--program-top:#252e32}
-#programs .course:nth-child(4){--program-accent:#fbbf24;--program-border:#b58a2b;--program-glow:rgba(251,191,36,.20);--program-top:#3b3020}
+#programs .course:nth-child(1),#academic-path .academic-timeline>li:nth-child(3){--program-accent:#38bdf8;--program-border:#327da0;--program-glow:rgba(56,189,248,.13);--program-top:#102d43}
+#programs .course:nth-child(3),#academic-path .path-master{--program-accent:#d5d2a4;--program-border:#858565;--program-glow:rgba(213,210,164,.12);--program-top:#252e32}
+#programs .course:nth-child(4),#academic-path .path-doctorate{--program-accent:#fbbf24;--program-border:#b58a2b;--program-glow:rgba(251,191,36,.20);--program-top:#3b3020}
 #programs .course .code,#programs .course .open{color:var(--program-accent)}
 #programs .course .pill{border-color:var(--program-border);color:var(--program-accent)}
 #programs .course:hover{border-color:var(--program-accent)}
 
-#programs .course:nth-child(2){--program-accent:#8ecfc6;--program-border:#5b9694;--program-glow:rgba(142,207,198,.14);--program-top:#19343c}
+#programs .course:nth-child(2),#academic-path .academic-timeline>li:nth-child(5){--program-accent:#8ecfc6;--program-border:#5b9694;--program-glow:rgba(142,207,198,.14);--program-top:#19343c}
 
 
 .academic-timeline{list-style:none;padding:0 0 0 28px;margin:30px 0 0 10px;border-left:3px solid #489ebd}
@@ -46,3 +46,20 @@ section{padding:48px 0}.title{text-align:center;margin-bottom:30px}.title h2{fon
 .postgraduate-routes .path-doctorate{border-color:#b58a2b;background:linear-gradient(135deg,#3b3020,#0b1a2b)}
 #academic-path .duration{color:#e5dbb4;font-weight:700}.path-doctorate h3{color:#fbbf24}.path-arrow{text-align:center;font-size:2rem;color:#fbbf24;padding:10px}.path-note{margin-top:24px;padding:18px 22px;border-top:1px solid var(--line);font-size:.9rem}
 @media(max-width:680px){.postgraduate-routes{grid-template-columns:1fr}.academic-timeline{padding-left:21px;margin-left:6px}.academic-timeline>li{padding:18px}.academic-timeline>li:before{left:-30px}.path-junction{padding:18px}}
+
+/* Match academic milestones to their research program colors. */
+#academic-path .academic-timeline>li:nth-child(3),
+#academic-path .academic-timeline>li:nth-child(5),
+#academic-path .path-master,
+#academic-path .path-doctorate{
+border-color:var(--program-border);
+background:radial-gradient(circle at 90% 8%,var(--program-glow),transparent 65%),linear-gradient(160deg,var(--program-top),#0b1a2b);
+}
+#academic-path .academic-timeline>li:nth-child(3) h3,
+#academic-path .academic-timeline>li:nth-child(5) h3,
+#academic-path .path-master h3,
+#academic-path .path-doctorate h3,
+#academic-path .path-master .duration,
+#academic-path .path-doctorate .duration{color:var(--program-accent)}
+#academic-path .academic-timeline>li:nth-child(3):before,
+#academic-path .academic-timeline>li:nth-child(5):before{background:var(--program-accent)}
