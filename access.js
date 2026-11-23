@@ -13,6 +13,10 @@
     document.close();
     if (location.hash) requestAnimationFrame(() => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView());
   }
+  const visibility = document.querySelector("#show-password");
+  visibility?.addEventListener("change", () => {
+    form.elements.password.type = visibility.checked ? "text" : "password";
+  });
   form.addEventListener("submit", async event => {
     event.preventDefault();
     const button = form.querySelector("button");
